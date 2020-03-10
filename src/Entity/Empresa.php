@@ -38,6 +38,11 @@ class Empresa
      */
     private $oferta;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nom;
+
     public function __construct()
     {
         $this->oferta = new ArrayCollection();
@@ -111,6 +116,18 @@ class Empresa
                 $ofertum->setEmpresa(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
 
         return $this;
     }

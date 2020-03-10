@@ -38,6 +38,11 @@ class Candidat
      */
     private $oferta;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $estudis;
+
     public function __construct()
     {
         $this->oferta = new ArrayCollection();
@@ -111,6 +116,18 @@ class Candidat
                 $ofertum->setCandidat(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getEstudis(): ?string
+    {
+        return $this->estudis;
+    }
+
+    public function setEstudis(string $estudis): self
+    {
+        $this->estudis = $estudis;
 
         return $this;
     }

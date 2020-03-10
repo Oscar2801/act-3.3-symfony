@@ -37,6 +37,11 @@ class Oferta
      */
     private $candidat;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titol;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Oferta
     public function setCandidat(?Candidat $candidat): self
     {
         $this->candidat = $candidat;
+
+        return $this;
+    }
+
+    public function getTitol(): ?string
+    {
+        return $this->titol;
+    }
+
+    public function setTitol(string $titol): self
+    {
+        $this->titol = $titol;
 
         return $this;
     }
